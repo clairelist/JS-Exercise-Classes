@@ -41,9 +41,33 @@ class Airplane {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
+
+
 class Person {
-  
+  constructor(name,age){
+    this.name=name;
+    this.age=age;
+    this.stomach=[];
+  }
+  eat(someFood){
+this.stomach.push(someFood);
+
+if (this.stomach.length>10){
+  this.stomach.pop();
 }
+  }
+  poop(){
+    this.stomach.length=0;
+  }
+  toString(){
+    return `${this.name},${this.age}`;
+  }
+}
+
+let neo=new Person({
+  name: 'Neo',
+  age:20
+});
 
 /*
   TASK 2
