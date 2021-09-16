@@ -69,6 +69,8 @@ let neo=new Person({
   age:20
 });
 
+//must initialize the Person with the required params, grepped from test file
+
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -84,8 +86,36 @@ let neo=new Person({
 */
 
 class Car {
-  
+  constructor(model,milesPerGallon){
+    this.model=model;
+    this.milesPerGallon=milesPerGallon;
+    this.tank=0;
+    this.odometer=0;
+  }
+  // fill(gallons){
+  //   return this.tank+=gallons;
+  // } 
 }
+
+Car.prototype.fill = function(gallons){
+  return this.tank +=gallons;
+}
+
+Car.prototype.drive = function(distance){
+  //return this.odometer+=distance;
+
+  const drivableMiles=this.tank * this.milesPerGallon;
+  if(distance<=drivableMiles){
+    this.odometer+=distance;
+    this.tank=this.tank - (distance/this.milesPerGallon);
+  } else{
+    this.odometer+=drivableMiles;
+    this.tank=0;
+    return `I ran out of fuel at ${this.odometer} miles`;
+  }
+}
+
+//for the test to pass we had to put the above in a prototype
 
 /*
   TASK 3
