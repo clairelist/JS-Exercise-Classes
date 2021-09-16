@@ -10,7 +10,7 @@ This challenge focuses on using the new for ES6 `class` syntax.
 - Student should be able to convert a pseudo classically instantiated program into class syntax
 
 ## Instructions
-
+arb edity
 ### Task 1: Set up Project
 
 Using VSCode and Command Line:
